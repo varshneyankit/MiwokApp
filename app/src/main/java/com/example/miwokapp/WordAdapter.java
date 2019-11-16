@@ -45,7 +45,10 @@ final class WordAdapter extends ArrayAdapter<Word> {
 
         englishTextView.setText(currentWord.getEnglish());
         miwokTextView.setText(currentWord.getMiwok());
-        image.setImageResource(currentWord.getImage());
+
+        if (currentWord.getImage() != null) {
+            image.setImageResource(currentWord.getImage());
+        }else image.setVisibility(View.GONE);
 
         return oldView;
     }

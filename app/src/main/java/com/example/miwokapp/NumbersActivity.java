@@ -9,7 +9,7 @@ public class NumbersActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_numbers);
+        setContentView(R.layout.words_list_view);
 
         Word[] numbers = new Word[10];
         numbers[0] = new Word(R.string.number_one, R.string.miwok_number_one, R.drawable.number_one);

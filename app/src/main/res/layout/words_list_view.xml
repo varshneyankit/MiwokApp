@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ListView xmlns:aniwef="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     aniwef:id="@+id/listView"
     aniwef:layout_width="match_parent"
     aniwef:layout_height="match_parent"
-    aniwef:orientation="vertical"
-    tools:context=".NumbersActivity"/>
+    aniwef:orientation="vertical" />

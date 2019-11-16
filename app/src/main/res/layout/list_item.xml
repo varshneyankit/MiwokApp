@@ -11,8 +11,7 @@
         android:layout_height="72dp"
         android:layout_alignParentStart="true"
         android:layout_centerVertical="true"
-        android:padding="8dp"
-        android:src="@mipmap/ic_launcher" />
+        android:padding="8dp" />
 
     <TextView
         android:id="@+id/mt1"
@@ -20,8 +19,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toEndOf="@id/image"
-        android:padding="8dp"
-        android:text="Miwok Translation" />
+        android:padding="8dp" />
 
     <TextView
         android:id="@+id/et1"
@@ -30,7 +28,6 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/mt1"
         android:layout_toEndOf="@id/image"
-        android:padding="8dp"
-        android:text="English Word" />
+        android:padding="8dp" />
 
 </RelativeLayout>

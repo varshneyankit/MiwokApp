@@ -4,9 +4,9 @@ public class Word {
 
     private int English;
     private int Miwok;
-    private int Image;
+    private Integer Image;
 
-    public Word(int english, int miwok, int image) {
+    public Word(int english, int miwok, Integer image) {
         English = english;
         Miwok = miwok;
         Image = image;
@@ -20,7 +20,7 @@ public class Word {
         return Miwok;
     }
 
-    public int getImage() {
+    public Integer getImage() {
         return Image;
     }
 }

@@ -3,13 +3,14 @@ package com.example.miwokapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.ListView;
 
 public class ColourActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_colour);
+        setContentView(R.layout.words_list_view);
 
         Word[] colours = new Word[8];
         colours[0] = new Word(R.string.color_black, R.string.miwok_color_black, R.drawable.color_black);
@@ -21,5 +22,8 @@ public class ColourActivity extends AppCompatActivity {
         colours[6] = new Word(R.string.color_red, R.string.miwok_color_red, R.drawable.color_red);
         colours[7] = new Word(R.string.color_white, R.string.miwok_color_white, R.drawable.color_white);
 
+        WordAdapter wordAdapter= new WordAdapter(this,R.layout.list_item, colours);
+        ListView listView = findViewById(R.id.listView);
+        listView.setAdapter(wordAdapter);
     }
 }
