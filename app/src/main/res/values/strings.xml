@@ -5,9 +5,9 @@
     <string name="colors_activity_title">Colors</string>
     <string name="phrases_activity_title">Phrases</string>
     <string name="family_activity_title">Family Members</string>
-	
-	
-	<!-- Vocabulary word for the color red [CHAR LIMIT=20] -->
+
+
+    <!-- Vocabulary word for the color red [CHAR LIMIT=20] -->
     <string name="color_red">red</string>
 
     <!-- Vocabulary word for the color dusty yellow [CHAR LIMIT=20] -->
@@ -120,10 +120,9 @@
 
     <!-- Vocabulary phrase for "Come here." [CHAR LIMIT=20] -->
     <string name="phrase_come_here">Come here.</string>
-	
-	
-	
-	<!-- Miwok translation for color red -->
+
+
+    <!-- Miwok translation for color red -->
     <string name="miwok_color_red">weṭeṭṭi</string>
 
     <!-- Miwok translation for color dusty yellow -->
