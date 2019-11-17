@@ -26,16 +26,18 @@ public class MainActivity extends AppCompatActivity {
                 TextView textView = (TextView) v;
                 String text = textView.getText().toString();
 
-                if (text.equals(getString(R.string.numbers_activity_title)))
-                    startActivity(new Intent(MainActivity.this, NumbersActivity.class));
-                else if (text.equals(getString(R.string.colors_activity_title)))
-                    startActivity(new Intent(MainActivity.this, ColourActivity.class));
-                else if (text.equals(getString(R.string.phrases_activity_title)))
-                    startActivity(new Intent(MainActivity.this,PhrasesActivity.class));
-                else if (text.equals(getString(R.string.family_activity_title)))
-                    startActivity(new Intent(MainActivity.this, FamilyMembersActivity.class));
+                Intent intent = new Intent(MainActivity.this, WordListActivity.class);
 
-                Toast.makeText(MainActivity.this, text, Toast.LENGTH_SHORT).show();
+                if (text.equals(getString(R.string.numbers_activity_title)))
+                    intent.putExtra(FetchData.ACTIVITY_IDENTIFIER_KEY,FetchData.NUMBERS_ACTIVITY);
+                else if (text.equals(getString(R.string.colors_activity_title)))
+                    intent.putExtra(FetchData.ACTIVITY_IDENTIFIER_KEY,FetchData.COLOURS_ACTIVITY);
+                else if (text.equals(getString(R.string.phrases_activity_title)))
+                    intent.putExtra(FetchData.ACTIVITY_IDENTIFIER_KEY,FetchData.PHRASES_ACTIVITY);
+                else if (text.equals(getString(R.string.family_activity_title)))
+                        intent.putExtra(FetchData.ACTIVITY_IDENTIFIER_KEY,FetchData.FAMILY_ACTIVITY);
+
+                startActivity(intent);
 
             }
         };
@@ -46,4 +48,6 @@ public class MainActivity extends AppCompatActivity {
         family.setOnClickListener(listener);
 
     }
+
+
 }
