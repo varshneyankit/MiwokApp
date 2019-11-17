@@ -1,6 +1,7 @@
 package com.example.miwokapp;
 
 import android.content.Context;
+import android.media.MediaPlayer;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +14,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 final class WordAdapter extends ArrayAdapter<Word> {
+
+    private String LOG_TAG = WordAdapter.class.getSimpleName();
 
     private Word[] data;
     private int resource;
@@ -41,7 +44,7 @@ final class WordAdapter extends ArrayAdapter<Word> {
         TextView miwokTextView = oldView.findViewById(R.id.mt1);
         ImageView image = oldView.findViewById(R.id.image);
 
-        Word currentWord = data[position];
+        final Word currentWord = data[position];
 
         englishTextView.setText(currentWord.getEnglish());
         miwokTextView.setText(currentWord.getMiwok());
@@ -49,6 +52,24 @@ final class WordAdapter extends ArrayAdapter<Word> {
         if (currentWord.getImage() != null) {
             image.setImageResource(currentWord.getImage());
         }else image.setVisibility(View.GONE);
+
+        oldView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        MediaPlayer player = MediaPlayer.create(context, currentWord.getAudio());
+                        player.start();
+                        while(player.isPlaying()){
+                            //Do nothing wait
+                        }player.release();
+                    }
+                }).start();
+
+            }
+        });
 
         return oldView;
     }

@@ -3,6 +3,8 @@ package com.example.miwokapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 public class WordListActivity extends AppCompatActivity {
@@ -17,7 +19,7 @@ public class WordListActivity extends AppCompatActivity {
         Word[] data = null;
 
         switch (identity) {
-            case FetchData.NUMBERS_ACTIVITY: {
+            case FetchData.NUMBERS_ACTIVITY:{
                 data = FetchData.getNumbersArray();
                 break;
             }

@@ -5,11 +5,13 @@ public class Word {
     private int English;
     private int Miwok;
     private Integer Image;
+    private int Audio;
 
-    public Word(int english, int miwok, Integer image) {
+    public Word(int english, int miwok, Integer image, int audio) {
         English = english;
         Miwok = miwok;
         Image = image;
+        Audio = audio;
     }
 
     public int getEnglish() {
@@ -23,4 +25,6 @@ public class Word {
     public Integer getImage() {
         return Image;
     }
+
+    public int getAudio() { return Audio;}
 }
