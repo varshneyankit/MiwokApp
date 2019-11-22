@@ -4,10 +4,10 @@ class FetchData {
 
     static final String ACTIVITY_IDENTIFIER_KEY = "identifier";
 
-    static final int NUMBERS_ACTIVITY = 0;
-    static final int COLOURS_ACTIVITY = 1;
-    static final int PHRASES_ACTIVITY = 2;
-    static final int FAMILY_ACTIVITY = 3;
+    static final int NUMBERS_FRAGMENT = 0;
+    static final int COLOURS_FRAGMENT = 1;
+    static final int PHRASES_FRAGMENT = 2;
+    static final int FAMILY_FRAGMENT = 3;
 
     static Word[] getNumbersArray() {
 

@@ -1,43 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.viewpager.widget.ViewPager android:id="@+id/pager"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:orientation="vertical">
-
-
-    <TextView
-        android:id="@+id/numbersTV"
-        style="@style/AppTheme.ActivityPickerTextView"
-        android:text="@string/numbers_activity_title"
-        android:textColor="#FFFFFF"
-        android:background="#F12A2C" />
-
-    <TextView
-        android:id="@+id/colorsTV"
-        style="@style/AppTheme.ActivityPickerTextView"
-        android:text="@string/colors_activity_title"
-        android:textColor="#FFFFFF"
-        android:background="#F5AA2C" />
-
-    <TextView
-        android:id="@+id/phrasesTV"
-        style="@style/AppTheme.ActivityPickerTextView"
-        android:text="@string/phrases_activity_title"
-        android:textColor="#FFFFFF"
-        android:background="#A1BA2C" />
-
-    <TextView
-        android:id="@+id/familyTV"
-        style="@style/AppTheme.ActivityPickerTextView"
-        android:text="@string/family_activity_title"
-        android:textColor="#FFFFFF"
-        android:background="#1b1dd6" />
-
-
-
-
-
-</LinearLayout>
+    xmlns:android="http://schemas.android.com/apk/res/android" />

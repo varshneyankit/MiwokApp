@@ -1,53 +1,79 @@
 package com.example.miwokapp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.TextView;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+
+    private String[] tabs = {
+            "Numbers",
+            "Colors",
+            "Phrases",
+            "Family Members"
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        TextView numbers = findViewById(R.id.numbersTV);
-        TextView colors = findViewById(R.id.colorsTV);
-        TextView phrases = findViewById(R.id.phrasesTV);
-        TextView family = findViewById(R.id.familyTV);
+        // TODO create tabs for view pager
+        // https://javapapers.com/android/android-tab-layout-with-swipe-views/
 
-        View.OnClickListener listener = new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                TextView textView = (TextView) v;
-                String text = textView.getText().toString();
-
-                Intent intent = new Intent(MainActivity.this, WordListActivity.class);
-
-                if (text.equals(getString(R.string.numbers_activity_title)))
-                    intent.putExtra(FetchData.ACTIVITY_IDENTIFIER_KEY,FetchData.NUMBERS_ACTIVITY);
-                else if (text.equals(getString(R.string.colors_activity_title)))
-                    intent.putExtra(FetchData.ACTIVITY_IDENTIFIER_KEY,FetchData.COLOURS_ACTIVITY);
-                else if (text.equals(getString(R.string.phrases_activity_title)))
-                    intent.putExtra(FetchData.ACTIVITY_IDENTIFIER_KEY,FetchData.PHRASES_ACTIVITY);
-                else if (text.equals(getString(R.string.family_activity_title)))
-                        intent.putExtra(FetchData.ACTIVITY_IDENTIFIER_KEY,FetchData.FAMILY_ACTIVITY);
-
-                startActivity(intent);
-
-            }
-        };
-
-        numbers.setOnClickListener(listener);
-        colors.setOnClickListener(listener);
-        phrases.setOnClickListener(listener);
-        family.setOnClickListener(listener);
+        ViewPager pager = findViewById(R.id.pager);
+        pager.setAdapter(new TabPagerAdapter(getSupportFragmentManager()));
 
     }
 
+    private class TabPagerAdapter extends FragmentPagerAdapter {
+
+        public TabPagerAdapter(@NonNull FragmentManager fm) {
+            super(fm);
+        }
+
+        @NonNull
+        @Override
+        public Fragment getItem(int position) {
+
+            WordListFragment fragment;
+
+            switch (position) {
+
+                case 0: {
+                     fragment= new WordListFragment(FetchData.NUMBERS_FRAGMENT);
+                     break;
+                }
+                case 1: {
+                    fragment= new WordListFragment(FetchData.COLOURS_FRAGMENT);
+                    break;
+                }
+                case 2: {
+                    fragment= new WordListFragment(FetchData.PHRASES_FRAGMENT);
+                    break;
+                }
+                case 3: {
+                    fragment= new WordListFragment(FetchData.FAMILY_FRAGMENT);
+                    break;
+                }
+                default:
+                    fragment = new WordListFragment(FetchData.NUMBERS_FRAGMENT);
+            }
+
+            return fragment;
+
+        }
+
+        @Override
+        public int getCount() {
+            return tabs.length;
+        }
+
+    }
 
 }
